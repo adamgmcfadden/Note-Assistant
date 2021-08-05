@@ -32,12 +32,12 @@ router.post("/notes", (req, res) => {
 
 //delete route to remove notes with given ID number
 router.delete("/notes/:id", (req, res) => {
-  //store req.body.id as noteDelete
-  const deleteNote = req.body.id;
+  //store req.params.id as noteDelete
+  const noteDelete = req.params.id;
   //save db.json as array
   const noteArray = JSON.parse(fs.readFileSync("./data/db.json", "utf8"));
   //create new array but exclude noteDelete
-  const newArray = noteArray.filter((note) => note.id !== deleteNote);
+  const newArray = noteArray.filter((note) => note.id !== noteDelete);
   //rewrite json file db.json file with newArray to exclude deleted note
   fs.writeFileSync("/data/db.json", JSON.stringify(newArray));
   //return data without noteDelete
