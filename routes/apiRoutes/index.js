@@ -37,7 +37,7 @@ router.delete("/notes/:id", (req, res) => {
   //save db.json as array
   const noteArray = JSON.parse(fs.readFileSync("./data/db.json", "utf8"));
   //create new array but exclude noteDelete
-  const newArray = noteArray.filter((note) => note.id !== noteDelete);
+  const newArray = noteArray.filter((file) => file.id !== noteDelete);
   //rewrite json file db.json file with newArray to exclude deleted note
   fs.writeFileSync("/data/db.json", JSON.stringify(newArray));
   //return data without noteDelete
