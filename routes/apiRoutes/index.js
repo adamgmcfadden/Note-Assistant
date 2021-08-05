@@ -9,7 +9,7 @@ const uniqueID = uuidv4();
 //read db.json file and return all saved notes as JSON
 router.get("/notes", (req, res) => {
   //create results variable to store db.json content
-  const results = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  const results = JSON.parse(fs.readFileSync("./data/db.json", "utf8"));
   //show results from response
   res.json(results);
 });
@@ -19,13 +19,13 @@ router.post("/notes", (req, res) => {
   //store req.body as variable
   const noteEntry = req.body;
   //create variable from db.json results
-  const results = JSON.parse(fs.readFileSync("./db/db.json"));
+  const results = JSON.parse(fs.readFileSync("./data/db.json"));
   //need unique id - found NPM UUID package for this application
   noteEntry.id = uniqueID;
   //push req.body to results variable
   results.push(noteEntry);
   //write post (results) to db.json file
-  fs.writeFileSync("./db/db.json", JSON.stringify(results));
+  fs.writeFileSync("./data/db.json", JSON.stringify(results));
   //return results
   return res.json(results);
 });
