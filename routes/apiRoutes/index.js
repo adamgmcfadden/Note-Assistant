@@ -15,7 +15,7 @@ router.get("/notes", (req, res) => {
 });
 
 //post new note to req.body and add to db.json file. Needs unique ID for each
-route.post("/notes", (req, res) => {
+router.post("/notes", (req, res) => {
   //store req.body as variable
   const noteEntry = req.body;
   //create variable from db.json results
@@ -24,8 +24,10 @@ route.post("/notes", (req, res) => {
   noteEntry.id = uniqueID;
   //push req.body to results variable
   results.push(noteEntry);
-  //write post to db.json file
-  fs.
+  //write post (results) to db.json file
+  fs.writeFileSync("./db/db.json", JSON.stringify(results));
+  //return results
+  return res.json(results);
 });
 
 module.exports = router;
