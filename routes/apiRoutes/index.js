@@ -1,7 +1,7 @@
+//import required modules (router - express.Router, uuid to generate unique id, fs package to read and write sync)
 const router = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
-const { notStrictEqual } = require("assert");
 
 //store uuidv4() as variable for ease of use
 const uniqueID = uuidv4();
@@ -19,7 +19,7 @@ router.post("/notes", (req, res) => {
   //store req.body as variable
   const noteEntry = req.body;
   //create variable from db.json results
-  const results = JSON.parse(fs.readFileSync("./data/db.json"));
+  const results = JSON.parse(fs.readFileSync("./data/db.json", "utf8"));
   //need unique id - found NPM UUID package for this application
   noteEntry.id = uniqueID;
   //push req.body to results variable
@@ -30,4 +30,19 @@ router.post("/notes", (req, res) => {
   return res.json(results);
 });
 
+//delete route to remove notes with given ID number
+router.delete("/notes/:id", (req, res) => {
+  //store req.body.id as noteDelete
+  const noteDelete = req.body.id;
+  //save db.json as array
+  const noteArray = JSON.parse(fs.readFileSync("./data/db.json", "utf8"));
+  //create new array but exclude noteDelete
+  const newArray = noteArray.filter((note) => note.id !== noteDelete);
+  //rewrite json file db.json file with newArray to exclude deleted note
+  fs.writeFileSync("/data/db.json", JSON.stringify(newArray));
+  //return data without noteDelete
+  return res.json(newArray);
+});
+
+//export router to be used in other file
 module.exports = router;

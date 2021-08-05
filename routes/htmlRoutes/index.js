@@ -1,4 +1,4 @@
-//import modules
+//import modules - path to join paths and router for express.Router
 const path = require("path");
 const router = require("express").Router();
 

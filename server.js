@@ -1,4 +1,4 @@
-//import modules required for app
+//import express.js to create server, and link to apiRoutes and HTMLRoutes
 const express = require("express");
 const apiRoutes = require("./routes/apiRoutes");
 const htmlRoutes = require("./routes/htmlRoutes");
