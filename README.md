@@ -26,7 +26,11 @@ https://polar-headland-19274.herokuapp.com/
 - Existing notes will be stored in the order they were created in the left section of the screen.
 - Click on the garbage button to delete an existing note.
 
+**Welcome Screen**
+![Screenshot 1](https://user-images.githubusercontent.com/83710803/128541668-85127f16-8486-4902-bb4e-1432aa4a99db.png)
 
+**Note Taker Screen**
+![Screenshot 2](https://user-images.githubusercontent.com/83710803/128541669-5ee91801-954e-4213-ab3d-19e355f9f688.png)
 
 ## Credits
 
