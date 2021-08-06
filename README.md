@@ -16,7 +16,7 @@ https://polar-headland-19274.herokuapp.com/
 - [Credits](#credits)
 - [License](#license)
 - [Contributing](#contributing)
-- [Contact Information](#contactinfo)
+- [Contact Information](#contact information)
 
 ## Usage
 
