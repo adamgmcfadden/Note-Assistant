@@ -19,7 +19,14 @@ https://polar-headland-19274.herokuapp.com/
 
 ## Usage
 
-Navigate to website, etc.
+- Navigate to website url.
+- Click on "Get Started Button".
+- Write 'Note Title' and 'Note Text' in desginated spaces and click the save button that's located in the top right section of the screen.
+- The 'plus'(+) button on the top right section of the screen will clear your input should you choose to not save it. 
+- Existing notes will be stored in the order they were created in the left section of the screen.
+- Click on the garbage button to delete an existing note.
+
+
 
 ## Credits
 
